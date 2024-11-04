@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
-import 'package:shake/shake.dart';
+import 'package:shake_gesture/shake_gesture.dart';
+
 
 class ShakePage extends StatelessWidget {
-   ShakePage({Key? key}) : super(key: key);
+   const ShakePage({super.key});
 
-   final ShakeDetector detector = ShakeDetector.waitForStart(
-      onPhoneShake: () {
-        var logger = Logger();
-        logger.i('Phone is shaking!');
-      }
-  );
 
   @override
   Widget build(BuildContext context) {
@@ -19,29 +13,15 @@ class ShakePage extends StatelessWidget {
         title: const Text('Shake'),
       ),
       body:  Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                detector.startListening();
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-              ),
-              child: const Text( 'Listen Shake'),
-            ),
-            const SizedBox(height: 20,),
-            ElevatedButton(
-              onPressed: () {
-                detector.stopListening();
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red,
-              ),
-              child: const Text( 'Remove listen to Shake'),
-            ),
-          ],
+        child: ShakeGesture(
+          onShake: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Shake!')),
+            );
+          },
+          child: const Center(
+            child: Text('Shake me!'),
+          ),
         ),
       ),
     );

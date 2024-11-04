@@ -16,7 +16,7 @@ class MenuPageState extends State<MenuPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Hacks!!!'),
+        title: const Text('My Flutter Armory'),
       ),
       body: Center(
         child: ListView(
@@ -27,14 +27,6 @@ class MenuPageState extends State<MenuPage> {
               trailing: const Icon(CupertinoIcons.chevron_forward),
               onTap: () {
                 Modular.to.pushNamed('/clipboard-module/');
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text('Vibration'),
-              trailing: const Icon(CupertinoIcons.chevron_forward),
-              onTap: () {
-                Modular.to.pushNamed('/vibration-module/');
               },
             ),
             ListTile(

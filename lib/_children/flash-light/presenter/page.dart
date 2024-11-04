@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:torch_light/torch_light.dart';
 
+
 class FlashLightPage extends StatelessWidget {
-  const FlashLightPage({Key? key}) : super(key: key);
+  const FlashLightPage({super.key});
 
   void turnOnFlashLight() async {
     final isTorchAvailable = await TorchLight.isTorchAvailable();

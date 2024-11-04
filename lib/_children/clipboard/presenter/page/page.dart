@@ -1,9 +1,10 @@
+
+
 import 'package:clipboard/clipboard.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ClipboardPage extends StatefulWidget {
-  const ClipboardPage({Key? key}) : super(key: key);
+  const ClipboardPage({super.key});
 
   @override
   State<ClipboardPage> createState() => _ClipboardPageState();
@@ -39,9 +40,7 @@ class _ClipboardPageState extends State<ClipboardPage> {
             ElevatedButton(
               onPressed: (){
                 FlutterClipboard.copy(_controller.text).then(( value ) {
-                    if (kDebugMode) {
-                      print('Text copied!!!');
-                    }
+                      debugPrint('Text copied!!!');
                   }
                 );
               },
