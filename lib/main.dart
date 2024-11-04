@@ -30,3 +30,4 @@ class AppWidget extends StatelessWidget {
     ); //added by extension
   }
 }
+
