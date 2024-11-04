@@ -22,7 +22,7 @@ class MenuPageState extends State<MenuPage> {
         child: ListView(
           children: [
             ListTile(
-              leading: const Icon(Icons.settings),
+              leading: const Icon(Icons.copy_outlined),
               title: const Text('Copy to Clipboard'),
               trailing: const Icon(CupertinoIcons.chevron_forward),
               onTap: () {
@@ -30,7 +30,7 @@ class MenuPageState extends State<MenuPage> {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.settings),
+              leading: const Icon(Icons.compare_arrows_outlined),
               title: const Text('Shake'),
               trailing: const Icon(CupertinoIcons.chevron_forward),
               onTap: () {
